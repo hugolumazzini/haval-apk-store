@@ -2,6 +2,17 @@
   "version": 1,
   "apps": [
     {
+      "packageName": "br.com.apkbox",
+      "name": "APK Box",
+      "description": "Este aplicativo. A entrada existe para ele se atualizar sozinho.",
+      "category": "Sistema",
+      "versionName": "1.0",
+      "versionCode": 1,
+      "sizeBytes": 9467748,
+      "apkUrl": "https://github.com/hugolumazzini/apkbox/releases/download/v1.0/apkbox-1.0.apk",
+      "sha256": "94c23c0b9932300d412c01968131ca59df62f1b09833dd6e83c6422be93a2562"
+    },
+    {
       "packageName": "br.com.redesurftank.havalshisuku",
       "name": "Impulse (beta 81)",
       "description": "Ajustes avançados da central e do veículo. Versão de testes — mais nova, porém menos rodada que a estável.",

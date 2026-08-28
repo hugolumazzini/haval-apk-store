@@ -4,6 +4,18 @@ Loja de aplicativos própria para Android, feita para telas em paisagem
 (centrais multimídia de carro, TV boxes). Lê um catálogo em JSON hospedado
 por você e instala os APKs direto no aparelho.
 
+## Baixar
+
+O APK pronto fica em [Releases](https://github.com/hugolumazzini/apkbox/releases).
+Endereço direto da versão atual:
+
+```
+https://github.com/hugolumazzini/apkbox/releases/download/v1.0/apkbox-1.0.apk
+```
+
+Dá para colar esse endereço no "Instalar via URL" de outro instalador (o Impulse,
+por exemplo) e instalar direto na central, sem cabo.
+
 ## O que ele faz
 
 - **Catálogo** — grade de apps vinda de um `catalog.json`, mostrando se cada um
