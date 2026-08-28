@@ -37,13 +37,42 @@ Para instalar num aparelho conectado por USB:
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-## Configurando o catálogo
+## O catálogo
 
-A URL padrão fica em [`Prefs.kt`](app/src/main/java/br/com/apkbox/data/Prefs.kt)
-e pode ser trocada em tempo de execução na aba **Ajustes**.
+A lista de apps vive em [`catalog.json`](catalog.json), na raiz deste
+repositório, e é servida em:
 
-O formato do JSON está em [`catalog-exemplo.json`](catalog-exemplo.json).
-Só `packageName`, `name` e `apkUrl` são obrigatórios.
+```
+https://raw.githubusercontent.com/hugolumazzini/apkbox/main/catalog.json
+```
+
+Esse é o endereço padrão, definido em
+[`Prefs.kt`](app/src/main/java/br/com/apkbox/data/Prefs.kt) e trocável em tempo
+de execução na aba **Ajustes**. Uma cópia do mesmo arquivo fica em
+`app/src/main/assets/` como último recurso, para a central sem internet.
+
+**Para adicionar um app:** edite o `catalog.json` e faça push. O app pega a
+versão nova no próximo "Recarregar" — não precisa recompilar nada.
+
+Só `packageName`, `name` e `apkUrl` são obrigatórios. Os demais campos:
+
+| Campo | Para que serve |
+|---|---|
+| `versionCode` | Compara com a versão instalada para avisar que há atualização. Sem ele, o app nunca aparece como *atualizável*. |
+| `sha256` | Confere o arquivo baixado antes de instalar. Sem ele, o download não é verificado. |
+| `versionName`, `sizeBytes`, `category` | Só exibição. |
+| `iconUrl` | Ícone na grade. Sem ele, mostra a inicial do nome. |
+
+Para levantar os valores de um APK:
+
+```bash
+aapt2 dump badging app.apk | head -1   # packageName, versionCode, versionName
+shasum -a 256 app.apk                  # sha256
+stat -f%z app.apk                      # sizeBytes
+```
+
+O `apkUrl` precisa apontar **direto** para o arquivo. Links encurtados e páginas
+de download com confirmação não funcionam: o app receberia HTML no lugar do APK.
 
 ## Assinatura de release
 

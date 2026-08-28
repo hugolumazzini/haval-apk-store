@@ -14,9 +14,9 @@ class Prefs(context: Context) {
         }
 
     companion object {
-        /** Troque pela URL do seu JSON — dá para editar direto na tela de Ajustes. */
+        /** Catálogo oficial. Dá para apontar para outro direto na tela de Ajustes. */
         const val DEFAULT_CATALOG_URL =
-            "https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/catalog.json"
+            "https://raw.githubusercontent.com/hugolumazzini/apkbox/main/catalog.json"
 
         private const val KEY_CATALOG_URL = "catalog_url"
     }
