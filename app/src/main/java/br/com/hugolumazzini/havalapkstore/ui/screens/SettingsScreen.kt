@@ -12,12 +12,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -30,50 +25,55 @@ import br.com.hugolumazzini.havalapkstore.ui.theme.Cores
 @Composable
 fun SettingsScreen(vm: AppViewModel, state: UiState) {
     val context = LocalContext.current
-    var url by remember(state.catalogUrl) { mutableStateOf(state.catalogUrl) }
+    val atualizacao = state.atualizacaoDaLoja
 
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
         Titulo("Ajustes")
 
         Bloco(Modifier.fillMaxWidth()) {
             Column(Modifier.padding(18.dp)) {
-                TituloBloco(
-                    "URL do catálogo",
-                    "JSON com a lista de apps. Vale qualquer host — GitHub raw serve bem.",
+                TituloBloco("Haval APK Store")
+                Spacer(Modifier.height(6.dp))
+                Text(
+                    "Versão ${state.versaoDoApp.ifBlank { "—" }}",
+                    style = MaterialTheme.typography.titleMedium,
+                    color = Cores.Texto,
                 )
-                Spacer(Modifier.height(12.dp))
-                CampoTexto(
-                    valor = url,
-                    onValorMudou = { url = it },
-                    dica = "https://…/catalog.json",
-                    modifier = Modifier.fillMaxWidth(),
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    when {
+                        state.carregandoCatalogo -> "Procurando versão nova…"
+                        atualizacao != null ->
+                            "Versão ${atualizacao.versionName.ifBlank { "nova" }} disponível."
+                        !state.versaoConferida -> "Ainda não foi possível conferir."
+                        state.origem != CatalogOrigin.REMOTO ->
+                            "Sem conexão com a lista oficial — não dá para saber se há versão nova."
+                        else -> "Você está na versão mais recente."
+                    },
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = if (atualizacao != null) Cores.Destaque else Cores.TextoApoio,
                 )
                 Spacer(Modifier.height(14.dp))
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(10.dp),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    BotaoPrimario(
-                        "Salvar e recarregar",
-                        onClick = { vm.salvarCatalogUrl(url) },
-                        enabled = url.isNotBlank() && url != state.catalogUrl,
-                    )
-                    BotaoSecundario("Recarregar", onClick = { vm.recarregarCatalogo() })
-                    TextButton(onClick = { vm.restaurarCatalogUrl() }) {
-                        Text(
-                            "Restaurar padrão",
-                            style = MaterialTheme.typography.labelLarge,
-                            color = Cores.Destaque,
-                        )
+                    if (atualizacao != null) {
+                        BotaoPrimario("Atualizar agora", onClick = { vm.atualizarLoja() })
                     }
+                    BotaoSecundario(
+                        "Procurar atualização",
+                        onClick = { vm.recarregarCatalogo() },
+                        enabled = !state.carregandoCatalogo,
+                    )
                 }
                 Spacer(Modifier.height(10.dp))
                 LinhaInfo(
-                    "Origem atual:",
+                    "Lista de apps:",
                     when (state.origem) {
-                        CatalogOrigin.REMOTO -> "URL remota"
-                        CatalogOrigin.CACHE -> "cache em disco (remoto indisponível)"
-                        CatalogOrigin.EMBUTIDO -> "lista embutida no APK"
+                        CatalogOrigin.REMOTO -> "lista oficial, recém-baixada"
+                        CatalogOrigin.CACHE -> "última cópia baixada (sem conexão agora)"
+                        CatalogOrigin.EMBUTIDO -> "lista embutida no app (sem conexão agora)"
                         null -> "—"
                     },
                 )
@@ -88,7 +88,7 @@ fun SettingsScreen(vm: AppViewModel, state: UiState) {
                 Spacer(Modifier.height(4.dp))
                 Text(
                     if (state.fontesLiberadas) {
-                        "Liberado — o APK Box pode abrir o instalador do sistema."
+                        "Liberado — a loja pode abrir o instalador do sistema."
                     } else {
                         "Bloqueado. Sem essa permissão o Android recusa qualquer instalação " +
                             "iniciada por este app."

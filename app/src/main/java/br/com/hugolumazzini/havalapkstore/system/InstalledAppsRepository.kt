@@ -53,6 +53,19 @@ class InstalledAppsRepository(private val context: Context) {
 
     fun intentAbrir(packageName: String): Intent? = pm.getLaunchIntentForPackage(packageName)
 
+    /** Versão desta própria loja, para mostrar em Ajustes e comparar com o catálogo. */
+    fun versaoDoApp(): InstalledApp? = runCatching {
+        val info = pm.getPackageInfo(context.packageName, 0)
+        InstalledApp(
+            packageName = info.packageName,
+            label = pm.getApplicationLabel(info.applicationInfo!!).toString(),
+            versionName = info.versionName.orEmpty(),
+            versionCode = versionCodeDe(info),
+            icon = null,
+            podeAbrir = false,
+        )
+    }.getOrNull()
+
     private fun versionCodeDe(info: PackageInfo): Long =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             info.longVersionCode

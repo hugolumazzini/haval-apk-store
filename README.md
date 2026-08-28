@@ -44,7 +44,12 @@ Requer Android 6.0 ou mais novo. Os arquivos ficam em
   está *não instalado*, *instalado* ou *com atualização disponível*.
 - **Por URL** — cola o endereço de um `.apk` e instala.
 - **Instalados** — lista os apps do aparelho, abre e desinstala.
-- **Ajustes** — troca a URL do catálogo e libera a permissão de "fontes desconhecidas".
+- **Ajustes** — mostra a versão instalada, procura versão nova e libera a
+  permissão de "fontes desconhecidas".
+
+A checagem de versão nova não é um mecanismo à parte: a loja está no próprio
+`catalog.json`, então é a mesma comparação de `versionCode` usada para qualquer
+outro app. Ela roda toda vez que o catálogo é carregado.
 
 Detalhes de robustez:
 
@@ -80,10 +85,14 @@ repositório, e é servida em:
 https://raw.githubusercontent.com/hugolumazzini/haval-apk-store/main/catalog.json
 ```
 
-Esse é o endereço padrão, definido em
-[`Prefs.kt`](app/src/main/java/br/com/hugolumazzini/havalapkstore/data/Prefs.kt) e trocável em tempo
-de execução na aba **Ajustes**. Uma cópia do mesmo arquivo fica em
-`app/src/main/assets/` como último recurso, para a central sem internet.
+O endereço é **fixo no código**, em `CATALOG_URL` dentro de
+[`CatalogRepository.kt`](app/src/main/java/br/com/hugolumazzini/havalapkstore/data/CatalogRepository.kt).
+Quem usa o app não tem como trocá-lo: um endereço mudado por engano
+transformaria a loja num instalador de qualquer coisa. Para apontar para outra
+lista é preciso recompilar.
+
+Uma cópia do mesmo arquivo fica em `app/src/main/assets/` como último recurso,
+para a central sem internet.
 
 **Para adicionar um app:** edite o `catalog.json` e faça push. O app pega a
 versão nova no próximo "Recarregar" — não precisa recompilar nada.

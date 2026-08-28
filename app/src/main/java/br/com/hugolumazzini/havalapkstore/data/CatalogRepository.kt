@@ -19,7 +19,6 @@ import java.io.File
 class CatalogRepository(
     private val context: Context,
     private val http: OkHttpClient,
-    private val prefs: Prefs,
 ) {
 
     private val json = Json {
@@ -30,10 +29,9 @@ class CatalogRepository(
     private val cacheFile: File get() = File(context.filesDir, "catalog.json")
 
     suspend fun load(): CatalogResult = withContext(Dispatchers.IO) {
-        val url = prefs.catalogUrl
         val remoteError = try {
             val request = Request.Builder()
-                .url(url)
+                .url(CATALOG_URL)
                 .cacheControl(CacheControl.FORCE_NETWORK)
                 .build()
             http.newCall(request).execute().use { response ->
@@ -74,4 +72,14 @@ class CatalogRepository(
         if (!file.exists()) return null
         json.decodeFromString<Catalog>(file.readText())
     }.getOrNull()
+
+    companion object {
+        /**
+         * Fonte oficial do catálogo. Fixa de propósito: quem usa o app não tem
+         * por que apontá-lo para outra lista, e um endereço trocado por engano
+         * transformaria a loja num instalador de qualquer coisa.
+         */
+        const val CATALOG_URL =
+            "https://raw.githubusercontent.com/hugolumazzini/haval-apk-store/main/catalog.json"
+    }
 }

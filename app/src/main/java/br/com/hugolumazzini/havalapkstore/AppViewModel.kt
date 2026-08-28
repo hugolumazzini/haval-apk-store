@@ -4,7 +4,6 @@ import android.app.Application
 import android.content.Intent
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.hugolumazzini.havalapkstore.data.Prefs
 import br.com.hugolumazzini.havalapkstore.data.model.CatalogApp
 import br.com.hugolumazzini.havalapkstore.data.model.CatalogOrigin
 import br.com.hugolumazzini.havalapkstore.install.InstallEvent
@@ -39,8 +38,13 @@ data class UiState(
     val tarefa: Tarefa? = null,
     val mensagem: String? = null,
     val erro: Boolean = false,
-    val catalogUrl: String = "",
     val fontesLiberadas: Boolean = true,
+    /** Versão desta loja, como está instalada no aparelho. */
+    val versaoDoApp: String = "",
+    /** Entrada do catálogo referente a esta loja, quando há versão mais nova. */
+    val atualizacaoDaLoja: CatalogApp? = null,
+    /** Vira true depois do primeiro catálogo carregado, para não dizer "atualizado" cedo demais. */
+    val versaoConferida: Boolean = false,
 )
 
 enum class EstadoApp { NAO_INSTALADO, ATUALIZAVEL, INSTALADO }
@@ -49,10 +53,13 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
 
     val container = AppContainer(app)
 
+    /** Nome e versionCode desta própria loja, lidos do PackageManager. */
+    private val propria = container.installedApps.versaoDoApp()
+
     private val _state = MutableStateFlow(
         UiState(
-            catalogUrl = container.prefs.catalogUrl,
             fontesLiberadas = UnknownSources.permitido(app),
+            versaoDoApp = propria?.versionName.orEmpty(),
         )
     )
     val state = _state.asStateFlow()
@@ -80,18 +87,33 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
                     origem = resultado.origin,
                     avisoCatalogo = resultado.warning,
                     carregandoCatalogo = false,
+                    atualizacaoDaLoja = atualizacaoDaLojaEm(resultado.apps),
+                    versaoConferida = true,
                 )
             }
         }
     }
 
-    fun salvarCatalogUrl(url: String) {
-        container.prefs.catalogUrl = url
-        _state.update { it.copy(catalogUrl = container.prefs.catalogUrl) }
-        recarregarCatalogo()
+    /**
+     * A loja também está no catálogo, então a checagem de versão nova é a mesma
+     * comparação usada para qualquer outro app: versionCode do catálogo maior
+     * que o instalado.
+     */
+    private fun atualizacaoDaLojaEm(apps: List<CatalogApp>): CatalogApp? {
+        val instalada = propria ?: return null
+        return apps.firstOrNull {
+            it.packageName == instalada.packageName && it.versionCode > instalada.versionCode
+        }
     }
 
-    fun restaurarCatalogUrl() = salvarCatalogUrl(Prefs.DEFAULT_CATALOG_URL)
+    fun atualizarLoja() {
+        val app = _state.value.atualizacaoDaLoja
+        if (app == null) {
+            mensagem("Nenhuma versão nova para instalar.")
+            return
+        }
+        instalarDoCatalogo(app)
+    }
 
     // ---------- instalados ----------
 
