@@ -10,11 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -22,12 +18,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import br.com.apkbox.AppViewModel
 import br.com.apkbox.UiState
 import br.com.apkbox.data.model.CatalogOrigin
+import br.com.apkbox.ui.theme.Cores
 
 @Composable
 fun SettingsScreen(vm: AppViewModel, state: UiState) {
@@ -37,38 +35,39 @@ fun SettingsScreen(vm: AppViewModel, state: UiState) {
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
         Titulo("Ajustes")
 
-        Card(Modifier.fillMaxWidth()) {
-            Column(Modifier.padding(16.dp)) {
-                Text("URL do catálogo", style = MaterialTheme.typography.titleMedium)
-                Text(
+        Bloco(Modifier.fillMaxWidth()) {
+            Column(Modifier.padding(18.dp)) {
+                TituloBloco(
+                    "URL do catálogo",
                     "JSON com a lista de apps. Vale qualquer host — GitHub raw serve bem.",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
-                Spacer(Modifier.height(10.dp))
-                OutlinedTextField(
-                    value = url,
-                    onValueChange = { url = it },
-                    singleLine = true,
+                Spacer(Modifier.height(12.dp))
+                CampoTexto(
+                    valor = url,
+                    onValorMudou = { url = it },
+                    dica = "https://…/catalog.json",
                     modifier = Modifier.fillMaxWidth(),
                 )
-                Spacer(Modifier.height(10.dp))
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Button(
+                Spacer(Modifier.height(14.dp))
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(10.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    BotaoPrimario(
+                        "Salvar e recarregar",
                         onClick = { vm.salvarCatalogUrl(url) },
                         enabled = url.isNotBlank() && url != state.catalogUrl,
-                        modifier = Modifier.height(48.dp),
-                    ) { Text("Salvar e recarregar") }
-                    OutlinedButton(
-                        onClick = { vm.recarregarCatalogo() },
-                        modifier = Modifier.height(48.dp),
-                    ) { Text("Recarregar") }
-                    TextButton(
-                        onClick = { vm.restaurarCatalogUrl() },
-                        modifier = Modifier.height(48.dp),
-                    ) { Text("Restaurar padrão") }
+                    )
+                    BotaoSecundario("Recarregar", onClick = { vm.recarregarCatalogo() })
+                    TextButton(onClick = { vm.restaurarCatalogUrl() }) {
+                        Text(
+                            "Restaurar padrão",
+                            style = MaterialTheme.typography.labelLarge,
+                            color = Cores.Destaque,
+                        )
+                    }
                 }
-                Spacer(Modifier.height(8.dp))
+                Spacer(Modifier.height(10.dp))
                 LinhaInfo(
                     "Origem atual:",
                     when (state.origem) {
@@ -81,11 +80,12 @@ fun SettingsScreen(vm: AppViewModel, state: UiState) {
             }
         }
 
-        Spacer(Modifier.height(12.dp))
+        Spacer(Modifier.height(14.dp))
 
-        Card(Modifier.fillMaxWidth()) {
-            Column(Modifier.padding(16.dp)) {
-                Text("Instalar apps desconhecidos", style = MaterialTheme.typography.titleMedium)
+        Bloco(Modifier.fillMaxWidth()) {
+            Column(Modifier.padding(18.dp)) {
+                TituloBloco("Instalar apps desconhecidos")
+                Spacer(Modifier.height(4.dp))
                 Text(
                     if (state.fontesLiberadas) {
                         "Liberado — o APK Box pode abrir o instalador do sistema."
@@ -94,25 +94,21 @@ fun SettingsScreen(vm: AppViewModel, state: UiState) {
                             "iniciada por este app."
                     },
                     style = MaterialTheme.typography.bodyMedium,
-                    color = if (state.fontesLiberadas) {
-                        MaterialTheme.colorScheme.onSurfaceVariant
-                    } else {
-                        MaterialTheme.colorScheme.error
-                    },
+                    color = if (state.fontesLiberadas) Cores.TextoApoio else Cores.Erro,
                 )
-                Spacer(Modifier.height(10.dp))
-                OutlinedButton(
+                Spacer(Modifier.height(14.dp))
+                BotaoSecundario(
+                    if (state.fontesLiberadas) "Abrir configuração" else "Liberar agora",
                     onClick = { context.startActivity(vm.intentFontesDesconhecidas()) },
-                    modifier = Modifier.height(48.dp),
-                ) { Text(if (state.fontesLiberadas) "Abrir configuração" else "Liberar agora") }
+                )
             }
         }
 
-        Spacer(Modifier.height(12.dp))
+        Spacer(Modifier.height(14.dp))
 
-        Card(Modifier.fillMaxWidth()) {
-            Column(Modifier.padding(16.dp)) {
-                Text("Como funciona", style = MaterialTheme.typography.titleMedium)
+        Bloco(Modifier.fillMaxWidth()) {
+            Column(Modifier.padding(18.dp)) {
+                TituloBloco("Como funciona")
                 Spacer(Modifier.height(6.dp))
                 Text(
                     "Cada instalação e desinstalação passa pelo diálogo do Android — sem root " +
@@ -120,9 +116,20 @@ fun SettingsScreen(vm: AppViewModel, state: UiState) {
                         "baixar o APK, conferir o SHA-256 quando o catálogo declara, avisar quando " +
                         "há versão nova e deixar tudo a um toque.",
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    color = Cores.TextoApoio,
                 )
             }
         }
+
+        Spacer(Modifier.height(12.dp))
+    }
+}
+
+@Composable
+private fun TituloBloco(texto: String, apoio: String? = null) {
+    Text(texto, style = MaterialTheme.typography.titleMedium, color = Cores.Texto)
+    if (apoio != null) {
+        Spacer(Modifier.height(3.dp))
+        Text(apoio, style = MaterialTheme.typography.bodyMedium, color = Cores.TextoApoio)
     }
 }

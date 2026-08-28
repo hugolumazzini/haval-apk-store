@@ -7,11 +7,11 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -19,12 +19,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import br.com.apkbox.AppViewModel
 import br.com.apkbox.UiState
+import br.com.apkbox.ui.theme.Cores
 
 @Composable
 fun UrlInstallScreen(vm: AppViewModel, state: UiState) {
@@ -38,27 +40,36 @@ fun UrlInstallScreen(vm: AppViewModel, state: UiState) {
         }
         state.tarefa?.let { BarraTarefa(it, onCancelar = vm::cancelarTarefa) }
 
-        OutlinedTextField(
-            value = url,
-            onValueChange = { url = it },
-            label = { Text("https://…/app.apk") },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri, imeAction = ImeAction.Go),
-            modifier = Modifier.fillMaxWidth(),
-        )
-
-        Spacer(Modifier.height(12.dp))
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            Button(
+        // Campo e ação lado a lado, como na faixa "Instalar via URL" do Impulse.
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            CampoTexto(
+                valor = url,
+                onValorMudou = { url = it },
+                dica = "URL do APK",
+                modifier = Modifier.weight(1f),
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Uri,
+                    imeAction = ImeAction.Go,
+                ),
+            )
+            Spacer(Modifier.width(12.dp))
+            BotaoPrimario(
+                "Instalar via URL",
                 onClick = { vm.instalarPorUrl(url) },
                 enabled = state.tarefa == null && url.isNotBlank(),
-                modifier = Modifier.height(52.dp),
-            ) { Text("Baixar e instalar") }
-            TextButton(
-                onClick = { url = "" },
-                enabled = url.isNotBlank(),
-                modifier = Modifier.height(52.dp),
-            ) { Text("Limpar") }
+                modifier = Modifier.height(56.dp),
+            )
+        }
+
+        Spacer(Modifier.height(8.dp))
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            TextButton(onClick = { url = "" }, enabled = url.isNotBlank()) {
+                Text(
+                    "Limpar",
+                    style = MaterialTheme.typography.labelLarge,
+                    color = Cores.TextoApoio,
+                )
+            }
         }
 
         Spacer(Modifier.height(16.dp))
