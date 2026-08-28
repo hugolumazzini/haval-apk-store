@@ -1,4 +1,4 @@
-package br.com.apkbox.ui
+package br.com.hugolumazzini.havalapkstore.ui
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor

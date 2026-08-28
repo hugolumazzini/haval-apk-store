@@ -18,15 +18,15 @@ val keystoreProps = Properties().apply {
 }
 
 android {
-    namespace = "br.com.apkbox"
+    namespace = "br.com.hugolumazzini.havalapkstore"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "br.com.apkbox"
+        applicationId = "br.com.hugolumazzini.havalapkstore"
         minSdk = 23
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
     }
 
     signingConfigs {

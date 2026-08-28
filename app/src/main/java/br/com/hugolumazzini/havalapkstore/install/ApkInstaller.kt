@@ -1,4 +1,4 @@
-package br.com.apkbox.install
+package br.com.hugolumazzini.havalapkstore.install
 
 import android.app.PendingIntent
 import android.content.Context

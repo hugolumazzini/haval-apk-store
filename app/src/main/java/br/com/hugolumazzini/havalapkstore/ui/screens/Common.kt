@@ -1,4 +1,4 @@
-package br.com.apkbox.ui.screens
+package br.com.hugolumazzini.havalapkstore.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -28,10 +28,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import br.com.apkbox.Fase
-import br.com.apkbox.Tarefa
-import br.com.apkbox.ui.theme.Cores
-import br.com.apkbox.ui.theme.EstiloSecao
+import br.com.hugolumazzini.havalapkstore.Fase
+import br.com.hugolumazzini.havalapkstore.Tarefa
+import br.com.hugolumazzini.havalapkstore.ui.theme.Cores
+import br.com.hugolumazzini.havalapkstore.ui.theme.EstiloSecao
 
 /** Raio usado por todo cartão e botão retangular da interface. */
 val FormaCartao = RoundedCornerShape(12.dp)

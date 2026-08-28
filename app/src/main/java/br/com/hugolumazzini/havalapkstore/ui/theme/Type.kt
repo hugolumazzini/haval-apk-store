@@ -1,4 +1,4 @@
-package br.com.apkbox.ui.theme
+package br.com.hugolumazzini.havalapkstore.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -7,7 +7,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import br.com.apkbox.R
+import br.com.hugolumazzini.havalapkstore.R
 
 /**
  * Michroma para a marca e os rótulos de seção — a fonte larga e maquinal que o

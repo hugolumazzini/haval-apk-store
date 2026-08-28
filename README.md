@@ -1,20 +1,33 @@
-# APK Box
+# Haval APK Store
 
-Loja de aplicativos própria para Android, feita para telas em paisagem
-(centrais multimídia de carro, TV boxes). Lê um catálogo em JSON hospedado
-por você e instala os APKs direto no aparelho.
+Loja de aplicativos para a **central multimídia do Haval H6**. Traz um catálogo
+com os apps que a comunidade usa no carro — Impulse, AutoPanel, Haval Radio,
+Haval Climate Control, Waze — e instala cada um direto na tela da central, sem
+cabo e sem computador.
+
+Nasceu para tapar um buraco: a aba "Instalar Apps" do Impulse foi descontinuada
+e o catálogo dela está obsoleto. Este app **não substitui o Impulse** — anda ao
+lado dele, e serve inclusive para instalar e atualizar o próprio Impulse. A
+interface segue a linguagem visual do Impulse de propósito, para os dois não
+destoarem na mesma tela.
+
+> Deve funcionar em qualquer Android em paisagem (outras centrais, TV box), mas
+> só é testado no H6.
 
 ## Baixar
 
-O APK pronto fica em [Releases](https://github.com/hugolumazzini/apkbox/releases).
+O APK pronto fica em [Releases](https://github.com/hugolumazzini/haval-apk-store/releases).
 Endereço direto da versão atual:
 
 ```
-https://github.com/hugolumazzini/apkbox/releases/download/v1.0/apkbox-1.0.apk
+https://github.com/hugolumazzini/haval-apk-store/releases/download/v1.0.0/haval-apk-store-1.0.0.apk
 ```
 
-Dá para colar esse endereço no "Instalar via URL" de outro instalador (o Impulse,
-por exemplo) e instalar direto na central, sem cabo.
+Da primeira vez, cole esse endereço no "Instalar via URL" do Impulse — que já
+está na central — e instale por lá. Depois disso a Haval APK Store se atualiza
+sozinha, porque ela também está no próprio catálogo.
+
+Requer Android 6.0 ou mais novo.
 
 ## O que ele faz
 
@@ -55,11 +68,11 @@ A lista de apps vive em [`catalog.json`](catalog.json), na raiz deste
 repositório, e é servida em:
 
 ```
-https://raw.githubusercontent.com/hugolumazzini/apkbox/main/catalog.json
+https://raw.githubusercontent.com/hugolumazzini/haval-apk-store/main/catalog.json
 ```
 
 Esse é o endereço padrão, definido em
-[`Prefs.kt`](app/src/main/java/br/com/apkbox/data/Prefs.kt) e trocável em tempo
+[`Prefs.kt`](app/src/main/java/br/com/hugolumazzini/havalapkstore/data/Prefs.kt) e trocável em tempo
 de execução na aba **Ajustes**. Uma cópia do mesmo arquivo fica em
 `app/src/main/assets/` como último recurso, para a central sem internet.
 

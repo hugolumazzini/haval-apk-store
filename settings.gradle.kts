@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "APK Box"
+rootProject.name = "Haval APK Store"
 include(":app")

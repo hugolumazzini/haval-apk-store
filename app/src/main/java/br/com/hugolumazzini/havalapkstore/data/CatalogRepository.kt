@@ -1,9 +1,9 @@
-package br.com.apkbox.data
+package br.com.hugolumazzini.havalapkstore.data
 
 import android.content.Context
-import br.com.apkbox.data.model.Catalog
-import br.com.apkbox.data.model.CatalogOrigin
-import br.com.apkbox.data.model.CatalogResult
+import br.com.hugolumazzini.havalapkstore.data.model.Catalog
+import br.com.hugolumazzini.havalapkstore.data.model.CatalogOrigin
+import br.com.hugolumazzini.havalapkstore.data.model.CatalogResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json

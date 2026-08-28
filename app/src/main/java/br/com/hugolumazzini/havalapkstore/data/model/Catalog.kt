@@ -1,4 +1,4 @@
-package br.com.apkbox.data.model
+package br.com.hugolumazzini.havalapkstore.data.model
 
 import kotlinx.serialization.Serializable
 

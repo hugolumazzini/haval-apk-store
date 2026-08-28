@@ -1,4 +1,4 @@
-package br.com.apkbox.install
+package br.com.hugolumazzini.havalapkstore.install
 
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow

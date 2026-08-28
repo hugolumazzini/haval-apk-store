@@ -1,4 +1,4 @@
-package br.com.apkbox.ui.screens
+package br.com.hugolumazzini.havalapkstore.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -30,10 +30,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.drawable.toBitmap
-import br.com.apkbox.AppViewModel
-import br.com.apkbox.UiState
-import br.com.apkbox.system.InstalledApp
-import br.com.apkbox.ui.theme.Cores
+import br.com.hugolumazzini.havalapkstore.AppViewModel
+import br.com.hugolumazzini.havalapkstore.UiState
+import br.com.hugolumazzini.havalapkstore.system.InstalledApp
+import br.com.hugolumazzini.havalapkstore.ui.theme.Cores
 
 @Composable
 fun InstalledScreen(

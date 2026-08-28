@@ -1,4 +1,4 @@
-package br.com.apkbox.ui.screens
+package br.com.hugolumazzini.havalapkstore.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -27,13 +27,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import br.com.apkbox.AppViewModel
-import br.com.apkbox.EstadoApp
-import br.com.apkbox.UiState
-import br.com.apkbox.data.model.CatalogApp
-import br.com.apkbox.data.model.CatalogOrigin
-import br.com.apkbox.ui.RemoteIcon
-import br.com.apkbox.ui.theme.Cores
+import br.com.hugolumazzini.havalapkstore.AppViewModel
+import br.com.hugolumazzini.havalapkstore.EstadoApp
+import br.com.hugolumazzini.havalapkstore.UiState
+import br.com.hugolumazzini.havalapkstore.data.model.CatalogApp
+import br.com.hugolumazzini.havalapkstore.data.model.CatalogOrigin
+import br.com.hugolumazzini.havalapkstore.ui.RemoteIcon
+import br.com.hugolumazzini.havalapkstore.ui.theme.Cores
 
 @Composable
 fun CatalogScreen(vm: AppViewModel, state: UiState) {

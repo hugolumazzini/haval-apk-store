@@ -1,4 +1,4 @@
-package br.com.apkbox.system
+package br.com.hugolumazzini.havalapkstore.system
 
 import android.content.Context
 import android.content.Intent

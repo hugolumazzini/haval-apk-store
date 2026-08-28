@@ -1,4 +1,4 @@
-package br.com.apkbox.ui.theme
+package br.com.hugolumazzini.havalapkstore.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
@@ -32,7 +32,7 @@ private val Escuro = darkColorScheme(
 )
 
 @Composable
-fun ApkBoxTheme(content: @Composable () -> Unit) {
+fun HavalApkStoreTheme(content: @Composable () -> Unit) {
     MaterialTheme(
         colorScheme = Escuro,
         typography = TipografiaCarro,

@@ -1,11 +1,11 @@
-package br.com.apkbox
+package br.com.hugolumazzini.havalapkstore
 
 import android.content.Context
-import br.com.apkbox.data.CatalogRepository
-import br.com.apkbox.data.Downloader
-import br.com.apkbox.data.Prefs
-import br.com.apkbox.install.ApkInstaller
-import br.com.apkbox.system.InstalledAppsRepository
+import br.com.hugolumazzini.havalapkstore.data.CatalogRepository
+import br.com.hugolumazzini.havalapkstore.data.Downloader
+import br.com.hugolumazzini.havalapkstore.data.Prefs
+import br.com.hugolumazzini.havalapkstore.install.ApkInstaller
+import br.com.hugolumazzini.havalapkstore.system.InstalledAppsRepository
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 

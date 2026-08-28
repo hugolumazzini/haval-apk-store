@@ -1,4 +1,4 @@
-package br.com.apkbox.data
+package br.com.hugolumazzini.havalapkstore.data
 
 import android.content.Context
 import kotlinx.coroutines.Dispatchers

@@ -1,4 +1,4 @@
-package br.com.apkbox.ui
+package br.com.hugolumazzini.havalapkstore.ui
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

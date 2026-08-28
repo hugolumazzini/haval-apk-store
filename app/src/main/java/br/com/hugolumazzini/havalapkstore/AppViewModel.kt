@@ -1,17 +1,17 @@
-package br.com.apkbox
+package br.com.hugolumazzini.havalapkstore
 
 import android.app.Application
 import android.content.Intent
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.apkbox.data.Prefs
-import br.com.apkbox.data.model.CatalogApp
-import br.com.apkbox.data.model.CatalogOrigin
-import br.com.apkbox.install.InstallEvent
-import br.com.apkbox.install.InstallEvents
-import br.com.apkbox.install.InstallLaunch
-import br.com.apkbox.system.InstalledApp
-import br.com.apkbox.system.UnknownSources
+import br.com.hugolumazzini.havalapkstore.data.Prefs
+import br.com.hugolumazzini.havalapkstore.data.model.CatalogApp
+import br.com.hugolumazzini.havalapkstore.data.model.CatalogOrigin
+import br.com.hugolumazzini.havalapkstore.install.InstallEvent
+import br.com.hugolumazzini.havalapkstore.install.InstallEvents
+import br.com.hugolumazzini.havalapkstore.install.InstallLaunch
+import br.com.hugolumazzini.havalapkstore.system.InstalledApp
+import br.com.hugolumazzini.havalapkstore.system.UnknownSources
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

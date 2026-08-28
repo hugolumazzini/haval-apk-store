@@ -1,4 +1,4 @@
-package br.com.apkbox.ui
+package br.com.hugolumazzini.havalapkstore.ui
 
 import android.app.Activity
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -46,13 +46,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import br.com.apkbox.AppViewModel
-import br.com.apkbox.ui.screens.CatalogScreen
-import br.com.apkbox.ui.screens.InstalledScreen
-import br.com.apkbox.ui.screens.SettingsScreen
-import br.com.apkbox.ui.screens.UrlInstallScreen
-import br.com.apkbox.ui.theme.Cores
-import br.com.apkbox.ui.theme.EstiloMarca
+import br.com.hugolumazzini.havalapkstore.AppViewModel
+import br.com.hugolumazzini.havalapkstore.ui.screens.CatalogScreen
+import br.com.hugolumazzini.havalapkstore.ui.screens.InstalledScreen
+import br.com.hugolumazzini.havalapkstore.ui.screens.SettingsScreen
+import br.com.hugolumazzini.havalapkstore.ui.screens.UrlInstallScreen
+import br.com.hugolumazzini.havalapkstore.ui.theme.Cores
+import br.com.hugolumazzini.havalapkstore.ui.theme.EstiloMarca
+import br.com.hugolumazzini.havalapkstore.ui.theme.EstiloSecao
 
 private enum class Aba(val titulo: String, val icone: ImageVector) {
     CATALOGO("Catálogo", Icons.Filled.ShoppingCart),
@@ -130,11 +131,12 @@ private fun BarraLateral(abaAtual: Aba, onSelecionar: (Aba) -> Unit) {
             .padding(horizontal = 14.dp),
         verticalArrangement = Arrangement.spacedBy(6.dp),
     ) {
-        Text(
-            "APK BOX",
-            style = EstiloMarca,
-            modifier = Modifier.padding(start = 10.dp, top = 26.dp, bottom = 22.dp),
-        )
+        // Marca em duas linhas: "HAVAL APK STORE" numa linha só não caberia
+        // na largura da barra lateral com a Michroma, que é uma fonte larga.
+        Column(Modifier.padding(start = 10.dp, top = 26.dp, bottom = 22.dp)) {
+            Text("HAVAL", style = EstiloMarca)
+            Text("APK STORE", style = EstiloSecao, modifier = Modifier.padding(top = 3.dp))
+        }
 
         Aba.entries.forEach { item ->
             ItemLateral(

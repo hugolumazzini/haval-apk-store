@@ -1,12 +1,12 @@
-package br.com.apkbox
+package br.com.hugolumazzini.havalapkstore
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import br.com.apkbox.ui.AppNav
-import br.com.apkbox.ui.theme.ApkBoxTheme
+import br.com.hugolumazzini.havalapkstore.ui.AppNav
+import br.com.hugolumazzini.havalapkstore.ui.theme.HavalApkStoreTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
-            ApkBoxTheme {
+            HavalApkStoreTheme {
                 AppNav(vm)
             }
         }

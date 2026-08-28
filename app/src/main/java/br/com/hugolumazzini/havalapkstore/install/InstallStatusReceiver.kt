@@ -1,4 +1,4 @@
-package br.com.apkbox.install
+package br.com.hugolumazzini.havalapkstore.install
 
 import android.content.BroadcastReceiver
 import android.content.Context
