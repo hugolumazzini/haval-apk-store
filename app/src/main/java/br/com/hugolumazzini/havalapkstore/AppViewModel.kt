@@ -154,18 +154,41 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
 
     // ---------- instalação ----------
 
-    fun instalarDoCatalogo(app: CatalogApp) = iniciar(
-        titulo = app.name,
-        url = app.apkUrl,
-        nomeArquivo = "${app.packageName}.apk",
-        packageName = app.packageName,
-        sha256 = app.sha256,
-    )
+    /**
+     * Instalar do catálogo exige `sha256` na entrada. É o único ponto onde o app
+     * instala algo sozinho, a partir de uma lista que ele mesmo baixou — sem o
+     * hash, um arquivo trocado na origem entraria sem ninguém perceber. Quando
+     * o usuário cola uma URL à mão a escolha é dele, e aí não há o que conferir.
+     */
+    fun instalarDoCatalogo(app: CatalogApp) {
+        if (app.sha256.isNullOrBlank()) {
+            mensagem(
+                "${app.name} está no catálogo sem SHA-256 e não pode ser instalado — " +
+                    "não haveria como conferir o arquivo baixado.",
+                erro = true,
+            )
+            return
+        }
+        iniciar(
+            titulo = app.name,
+            url = app.apkUrl,
+            nomeArquivo = "${app.packageName}.apk",
+            packageName = app.packageName,
+            sha256 = app.sha256,
+        )
+    }
 
     fun instalarPorUrl(url: String) {
         val limpa = url.trim()
-        if (!limpa.startsWith("http://") && !limpa.startsWith("https://")) {
-            mensagem("Informe uma URL começando com http:// ou https://", erro = true)
+        // Só https. Em http puro qualquer pessoa na mesma rede troca o arquivo no
+        // meio do caminho, e o que seria instalado passa a ser escolha dela.
+        if (!limpa.startsWith("https://", ignoreCase = true)) {
+            val motivo = if (limpa.startsWith("http://", ignoreCase = true)) {
+                "Endereços http:// não são aceitos — o download poderia ser trocado no caminho. Use https://"
+            } else {
+                "Informe uma URL começando com https://"
+            }
+            mensagem(motivo, erro = true)
             return
         }
         iniciar(

@@ -8,13 +8,28 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
-// Assinatura de release opcional: crie keystore.properties na raiz do projeto com
-// storeFile / storePassword / keyAlias / keyPassword. Sem ele, o release sai
-// assinado com a chave de debug — instala igual numa central com fontes
-// desconhecidas liberadas.
+// Assinatura de release: keystore.properties na raiz, com
+// storeFile / storePassword / keyAlias / keyPassword.
+//
+// Sem ele o build de release FALHA, de propósito. A chave de debug do Android é
+// pública (senha "android"), então um release assinado com ela pode ser
+// atualizado por qualquer pessoa — e o estrago só apareceria depois de
+// publicado. Melhor não compilar do que compilar algo indefensável.
 val keystorePropsFile = rootProject.file("keystore.properties")
 val keystoreProps = Properties().apply {
     if (keystorePropsFile.exists()) keystorePropsFile.inputStream().use { load(it) }
+}
+val temChaveDeRelease = keystorePropsFile.exists()
+
+gradle.taskGraph.whenReady {
+    val vaiGerarRelease = allTasks.any { it.name.contains("Release") && it.name.startsWith("assemble") }
+    if (vaiGerarRelease && !temChaveDeRelease) {
+        throw GradleException(
+            "Build de release sem keystore.properties na raiz do projeto.\n" +
+                "Restaure o arquivo e o .jks a partir do seu backup. Assinar o release com a " +
+                "chave de debug deixaria qualquer pessoa publicar atualizações por cima do app."
+        )
+    }
 }
 
 android {
@@ -44,11 +59,8 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = if (keystorePropsFile.exists()) {
-                signingConfigs.getByName("release")
-            } else {
-                signingConfigs.getByName("debug")
-            }
+            // Sem fallback para a chave de debug: ver a checagem no topo do arquivo.
+            if (temChaveDeRelease) signingConfig = signingConfigs.getByName("release")
         }
     }
 

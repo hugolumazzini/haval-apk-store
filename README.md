@@ -57,7 +57,8 @@ Detalhes de robustez:
   lista embutida no app. A grade nunca fica vazia por falta de internet.
 - A instalação tenta o `PackageInstaller` (que devolve sucesso/erro); se a ROM
   recusar, cai para o diálogo clássico do sistema.
-- Se o catálogo informar um `sha256`, o APK baixado é conferido antes de instalar.
+- Todo APK instalado pelo catálogo tem o `sha256` conferido antes de instalar.
+  Entrada sem hash não instala.
 
 ## Como compilar
 
@@ -97,12 +98,11 @@ para a central sem internet.
 **Para adicionar um app:** edite o `catalog.json` e faça push. O app pega a
 versão nova no próximo "Recarregar" — não precisa recompilar nada.
 
-Só `packageName`, `name` e `apkUrl` são obrigatórios. Os demais campos:
+`packageName`, `name`, `apkUrl` e `sha256` são obrigatórios. Os demais campos:
 
 | Campo | Para que serve |
 |---|---|
 | `versionCode` | Compara com a versão instalada para avisar que há atualização. Sem ele, o app nunca aparece como *atualizável*. |
-| `sha256` | Confere o arquivo baixado antes de instalar. Sem ele, o download não é verificado. |
 | `versionName`, `sizeBytes`, `category` | Só exibição. |
 | `iconUrl` | Ícone na grade. Sem ele, mostra a inicial do nome. |
 
@@ -154,9 +154,33 @@ novo só aparece no app depois disso.
 
 ## Assinatura de release
 
-Opcional. Crie um `keystore.properties` na raiz com `storeFile`,
-`storePassword`, `keyAlias` e `keyPassword`. Sem ele, o build de release é
-assinado com a chave de debug — instala normalmente num aparelho com fontes
-desconhecidas liberadas.
+**Obrigatória.** Crie um `keystore.properties` na raiz com `storeFile`,
+`storePassword`, `keyAlias` e `keyPassword`. Sem ele o `assembleRelease`
+**falha de propósito**, com uma mensagem explicando o que fazer.
 
-Esse arquivo e os `.jks` estão no `.gitignore`: **nunca suba chaves.**
+O motivo: a chave de debug do Android é pública (a senha é literalmente
+`android`). Um release assinado com ela pode ser atualizado por qualquer pessoa
+que monte um APK com o mesmo `applicationId` — e o estrago só apareceria depois
+de publicado. Melhor não compilar.
+
+Esse arquivo e os `.jks` estão no `.gitignore`: **nunca suba chaves.** Eles só
+existem nesta máquina; perdê-los significa não conseguir mais publicar
+atualizações para quem já instalou.
+
+## Decisões de segurança
+
+O app baixa arquivos da internet e os instala. Isso concentra bastante poder num
+lugar só, então algumas portas ficam fechadas por escolha:
+
+- **Só HTTPS.** Não há `usesCleartextTraffic`; há um
+  [`network_security_config.xml`](app/src/main/res/xml/network_security_config.xml)
+  que barra texto claro, e o "Instalar por URL" recusa `http://` no código
+  (o que também cobre o Android 6.0, onde aquele arquivo não vale). O OkHttp
+  segue redirecionamentos, mas **não** de https para http.
+- **`sha256` obrigatório no catálogo.** Instalar pela grade só acontece se a
+  entrada declarar o hash. É o único ponto onde o app instala algo por conta
+  própria, a partir de uma lista que ele mesmo baixou. Colar uma URL à mão
+  continua permitido sem hash — ali a escolha é de quem digitou.
+- **Fonte do catálogo fixa no código**, sem campo editável na interface.
+- **`allowBackup="false"`.** Não há nada que valha a pena restaurar, e o backup
+  seria mais uma cópia do estado do app fora do aparelho.

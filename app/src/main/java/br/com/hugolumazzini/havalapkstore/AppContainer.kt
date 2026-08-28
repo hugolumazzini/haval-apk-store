@@ -17,7 +17,9 @@ class AppContainer(context: Context) {
         .readTimeout(60, TimeUnit.SECONDS)
         .writeTimeout(60, TimeUnit.SECONDS)
         .followRedirects(true)
-        .followSslRedirects(true)
+        // Encurtador que redirecione de https para http fica pelo caminho: aceitar
+        // a queda seria baixar um APK por um canal que qualquer um na rede reescreve.
+        .followSslRedirects(false)
         .build()
 
     val catalogRepository = CatalogRepository(app, http)

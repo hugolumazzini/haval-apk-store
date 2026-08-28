@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Nada de HTTP puro. Este app baixa APKs e os instala: numa rede hostil (hotspot
+  de celular, WiFi de estacionamento) qualquer resposta em texto claro pode ser
+  reescrita, e o que se instala passa a ser escolha de quem está na rede.
+
+  Vale a partir do Android 7.0. No 6.0 não existe esse arquivo — lá quem barra é
+  a checagem no código, em AppViewModel.instalarPorUrl.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>
