@@ -26,6 +26,15 @@ O link é fixo e sempre entrega a versão mais recente — não muda a cada rele
 Depois da primeira instalação a Haval APK Store se atualiza sozinha, porque ela
 também está no próprio catálogo.
 
+Ele é só um atalho para este endereço, que é o de verdade e funciona igual:
+
+```
+https://github.com/hugolumazzini/haval-apk-store/releases/latest/download/haval-apk-store.apk
+```
+
+Se o encurtador algum dia sair do ar, use o endereço completo — e recrie o
+atalho `havalapkstore` em qualquer encurtador apontando para ele.
+
 Requer Android 6.0 ou mais novo. Os arquivos ficam em
 [Releases](https://github.com/hugolumazzini/haval-apk-store/releases).
 
@@ -127,9 +136,9 @@ O padrão, para o link curto continuar valendo:
 4. Atualize a entrada da própria loja no `catalog.json` (`versionCode`,
    `versionName`, `sizeBytes`, `sha256` e a URL fixada da tag) e dê push.
 
-Nas notas do release: link curto, o que mudou, versão mínima do Android. **Sem
-SHA-256** — ele não serve para ninguém ali. Quem confere o hash é o app, pelo
-`catalog.json`, automaticamente.
+Nas notas do release: link curto **e** o endereço completo do GitHub, o que
+mudou, versão mínima do Android. **Sem SHA-256** — ele não serve para ninguém
+ali. Quem confere o hash é o app, pelo `catalog.json`, automaticamente.
 
 O `raw.githubusercontent.com` guarda cópia por uns 5 minutos, então o catálogo
 novo só aparece no app depois disso.
