@@ -55,6 +55,28 @@
       "sizeBytes": 49641050,
       "apkUrl": "https://github.com/rocamoras/haval-climate-control/releases/download/v1.19.1/app-release.apk",
       "sha256": "8089982982937f50d3c0de35a2c78e2b912333b84d4a98c3bbca8a8e002768d4"
+    },
+    {
+      "packageName": "com.waze",
+      "name": "Waze",
+      "description": "Navegação com trânsito em tempo real.",
+      "category": "Navegação",
+      "versionName": "4.81.0.4",
+      "versionCode": 1022759,
+      "sizeBytes": 89426195,
+      "apkUrl": "https://shorturl.at/R6grE",
+      "sha256": "9b260bd7b100f1ef95ed238bd75ba282cd0d0077f483b596c4c370d547dded75"
+    },
+    {
+      "packageName": "com.revanced.net.revancedmanager",
+      "name": "ReVanced Manager Plus",
+      "description": "Aplica modificações em outros apps, como remover anúncios do YouTube.",
+      "category": "Ferramentas",
+      "versionName": "3.0.36",
+      "versionCode": 133,
+      "sizeBytes": 2269391,
+      "apkUrl": "https://shorturl.at/h7Zx4",
+      "sha256": "dcee336bb3df8f80e62e994042dd9cad2c085c271ace432837f1dc33d7552d72"
     }
   ]
 }

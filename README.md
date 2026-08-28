@@ -71,8 +71,21 @@ shasum -a 256 app.apk                  # sha256
 stat -f%z app.apk                      # sizeBytes
 ```
 
-O `apkUrl` precisa apontar **direto** para o arquivo. Links encurtados e páginas
-de download com confirmação não funcionam: o app receberia HTML no lugar do APK.
+O `apkUrl` precisa terminar entregando o arquivo. Redirecionamentos funcionam —
+links `shorturl.at` foram testados e passam. O que **não** funciona é página de
+download que exige um clique de confirmação (Google Drive, APKMirror): o app
+receberia HTML no lugar do APK.
+
+### Sobre o `sha256` das entradas com link encurtado
+
+Waze e ReVanced Manager Plus usam encurtadores, que apontam para "a versão
+atual" e não para um arquivo fixo. Quando essa versão mudar, o hash gravado aqui
+deixa de bater e o app vai **recusar a instalação** — que é o comportamento
+desejado: melhor falhar do que instalar um arquivo que não é o esperado.
+
+Quando isso acontecer, baixe o novo arquivo e atualize o `sha256`, o
+`versionCode` e o `versionName` desta entrada. As entradas do GitHub não têm
+esse problema: apontam para uma versão fixa, que nunca muda.
 
 ## Assinatura de release
 
