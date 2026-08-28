@@ -14,20 +14,20 @@ destoarem na mesma tela.
 > Deve funcionar em qualquer Android em paisagem (outras centrais, TV box), mas
 > só é testado no H6.
 
-## Baixar
+## Instalar
 
-O APK pronto fica em [Releases](https://github.com/hugolumazzini/haval-apk-store/releases).
-Endereço direto da versão atual:
+Cole este endereço no "Instalar via URL" do Impulse, que já está na central:
 
 ```
-https://github.com/hugolumazzini/haval-apk-store/releases/download/v1.0.0/haval-apk-store-1.0.0.apk
+https://tinyurl.com/havalapkstore
 ```
 
-Da primeira vez, cole esse endereço no "Instalar via URL" do Impulse — que já
-está na central — e instale por lá. Depois disso a Haval APK Store se atualiza
-sozinha, porque ela também está no próprio catálogo.
+O link é fixo e sempre entrega a versão mais recente — não muda a cada release.
+Depois da primeira instalação a Haval APK Store se atualiza sozinha, porque ela
+também está no próprio catálogo.
 
-Requer Android 6.0 ou mais novo.
+Requer Android 6.0 ou mais novo. Os arquivos ficam em
+[Releases](https://github.com/hugolumazzini/haval-apk-store/releases).
 
 ## O que ele faz
 
@@ -111,6 +111,28 @@ desejado: melhor falhar do que instalar um arquivo que não é o esperado.
 Quando isso acontecer, baixe o novo arquivo e atualize o `sha256`, o
 `versionCode` e o `versionName` desta entrada. As entradas do GitHub não têm
 esse problema: apontam para uma versão fixa, que nunca muda.
+
+## Publicar uma versão nova
+
+O padrão, para o link curto continuar valendo:
+
+1. Suba `versionCode` e `versionName` em `app/build.gradle.kts`. O
+   `versionCode` **precisa** aumentar — é por ele que o Android e o catálogo
+   sabem que há atualização.
+2. `./gradlew assembleRelease` e copie o resultado para `haval-apk-store.apk`.
+   **O nome do arquivo é sempre esse, sem número de versão** — é o que faz
+   `releases/latest/download/haval-apk-store.apk` funcionar, e é para onde o
+   `tinyurl.com/havalapkstore` aponta.
+3. `gh release create vX.Y.Z haval-apk-store.apk` — tag em três números.
+4. Atualize a entrada da própria loja no `catalog.json` (`versionCode`,
+   `versionName`, `sizeBytes`, `sha256` e a URL fixada da tag) e dê push.
+
+Nas notas do release: link curto, o que mudou, versão mínima do Android. **Sem
+SHA-256** — ele não serve para ninguém ali. Quem confere o hash é o app, pelo
+`catalog.json`, automaticamente.
+
+O `raw.githubusercontent.com` guarda cópia por uns 5 minutos, então o catálogo
+novo só aparece no app depois disso.
 
 ## Assinatura de release
 
