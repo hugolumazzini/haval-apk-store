@@ -1,0 +1,20 @@
+# Arquivos gerados pela compilação — sempre podem ser refeitos
+build/
+.gradle/
+.kotlin/
+local.properties
+
+# Chaves de assinatura do app — NUNCA subir
+keystore.properties
+*.jks
+*.keystore
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# macOS
+.DS_Store

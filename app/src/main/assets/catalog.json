@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "apps": [
+    {
+      "packageName": "org.videolan.vlc",
+      "name": "VLC",
+      "description": "Player de vídeo e áudio que abre praticamente qualquer formato.",
+      "category": "Mídia",
+      "versionName": "3.6.5",
+      "versionCode": 13060599,
+      "sizeBytes": 44000000,
+      "apkUrl": "https://get.videolan.org/vlc-android/3.6.5/VLC-Android-3.6.5-armv7.apk"
+    },
+    {
+      "packageName": "com.spotify.music",
+      "name": "Spotify",
+      "description": "Streaming de música.",
+      "category": "Mídia",
+      "versionName": "",
+      "versionCode": 0,
+      "apkUrl": "https://exemplo.com/apks/spotify.apk"
+    },
+    {
+      "packageName": "com.waze",
+      "name": "Waze",
+      "description": "Navegação com trânsito em tempo real.",
+      "category": "Navegação",
+      "versionName": "",
+      "versionCode": 0,
+      "apkUrl": "https://exemplo.com/apks/waze.apk"
+    },
+    {
+      "packageName": "com.mxtech.videoplayer.ad",
+      "name": "MX Player",
+      "description": "Player de vídeo com suporte a legendas.",
+      "category": "Mídia",
+      "versionName": "",
+      "versionCode": 0,
+      "apkUrl": "https://exemplo.com/apks/mxplayer.apk"
+    }
+  ]
+}
