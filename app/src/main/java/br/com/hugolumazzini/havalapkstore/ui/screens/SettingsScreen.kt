@@ -113,8 +113,8 @@ fun SettingsScreen(vm: AppViewModel, state: UiState) {
                 Text(
                     "Cada instalação e desinstalação passa pelo diálogo do Android — sem root " +
                         "ou ADB não existe instalação silenciosa. O que o app resolve é o resto: " +
-                        "baixar o APK, conferir o SHA-256 quando o catálogo declara, avisar quando " +
-                        "há versão nova e deixar tudo a um toque.",
+                        "baixar o APK só por HTTPS, conferir o SHA-256 declarado no catálogo " +
+                        "antes de instalar, avisar quando há versão nova e deixar tudo a um toque.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = Cores.TextoApoio,
                 )
