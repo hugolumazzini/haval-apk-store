@@ -14,7 +14,7 @@
     },
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
-      "name": "Haval Trip",
+      "name": "Haval Trip (beta)",
       "description": "Computador de bordo com várias viagens em paralelo: distância, consumo e tempo de cada trecho.",
       "category": "Sistema",
       "versionName": "1.0.0",
