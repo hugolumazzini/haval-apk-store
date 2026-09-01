@@ -13,6 +13,17 @@
       "sha256": "f91380ab68f8b6783dabe44d3e04739eff01c847a3d9229aba32d8a211d6ba71"
     },
     {
+      "packageName": "br.com.hugolumazzini.havaltrip",
+      "name": "Haval Trip",
+      "description": "Computador de bordo com várias viagens em paralelo: distância, consumo e tempo de cada trecho.",
+      "category": "Sistema",
+      "versionName": "1.0.0",
+      "versionCode": 1,
+      "sizeBytes": 12454316,
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.3.0/haval-trip.apk",
+      "sha256": "6e614d12ed30eacd9bedb8a9905dc62569c0a58ec6d6d742488a1f99d6b88a8e"
+    },
+    {
       "packageName": "br.com.redesurftank.havalshisuku",
       "name": "Impulse (beta 81)",
       "description": "Ajustes avançados da central e do veículo. Versão de testes — mais nova, porém menos rodada que a estável.",
