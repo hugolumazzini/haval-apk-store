@@ -71,6 +71,33 @@ fun CatalogScreen(vm: AppViewModel, state: UiState) {
                 trackColor = Cores.Campo,
             )
         }
+        state.atualizacaoDaLoja?.let {
+            Bloco(
+                Modifier.fillMaxWidth().padding(bottom = 12.dp),
+                cor = Cores.Destaque.copy(alpha = 0.1f),
+            ) {
+                Row(
+                    Modifier.fillMaxWidth().padding(12.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Column(Modifier.weight(1f)) {
+                        Text(
+                            "Atualização disponível",
+                            style = MaterialTheme.typography.titleSmall,
+                            color = Cores.Destaque,
+                        )
+                        Text(
+                            "Haval APK Store ${it.versionName}",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = Cores.Texto.copy(alpha = 0.7f),
+                        )
+                    }
+                    TextButton(onClick = { vm.atualizarLoja() }) {
+                        Text("Atualizar")
+                    }
+                }
+            }
+        }
         state.avisoCatalogo?.let { Aviso(it) }
         if (!state.fontesLiberadas) {
             Aviso("Instalação bloqueada: libere \"instalar apps desconhecidos\" na aba Ajustes.")
