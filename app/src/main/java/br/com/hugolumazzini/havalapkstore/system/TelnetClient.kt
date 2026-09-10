@@ -46,8 +46,14 @@ class TelnetClient {
 
     fun disconnect() {
         try {
-            writer?.close()
+            socket?.shutdownInput()
+            socket?.shutdownOutput()
+        } catch (e: Exception) {
+            // ignore
+        }
+        try {
             reader?.close()
+            writer?.close()
             socket?.close()
         } catch (e: Exception) {
             // ignore
