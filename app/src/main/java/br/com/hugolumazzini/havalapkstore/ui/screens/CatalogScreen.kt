@@ -92,9 +92,11 @@ fun CatalogScreen(vm: AppViewModel, state: UiState) {
                             color = Cores.Texto.copy(alpha = 0.7f),
                         )
                     }
-                    TextButton(onClick = { vm.atualizarLoja() }) {
-                        Text("Atualizar")
-                    }
+                    BotaoPrimario(
+                        "Atualizar",
+                        onClick = { vm.atualizarLoja() },
+                        cor = Cores.Destaque,
+                    )
                 }
             }
         }

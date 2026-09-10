@@ -73,14 +73,6 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         }
         recarregarCatalogo()
         recarregarInstalados()
-        verificarAtualizacoes()
-    }
-
-    private fun verificarAtualizacoes() {
-        viewModelScope.launch {
-            if (!container.updateChecker.verificarPermissaoCheckDuplicado()) return@launch
-            recarregarCatalogo()
-        }
     }
 
     // ---------- catálogo ----------
