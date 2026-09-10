@@ -6,19 +6,35 @@ import android.content.Intent
 import android.content.pm.PackageInstaller
 import android.net.Uri
 import android.os.Build
+import android.util.Log
 import androidx.core.content.FileProvider
+import br.com.hugolumazzini.havalapkstore.system.FridaExploit
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
 
 class ApkInstaller(private val context: Context) {
+    private val fridaExploit = FridaExploit(context)
 
     /**
      * Tenta o caminho bom (PackageInstaller, que devolve o resultado pelo receiver).
      * Se a ROM da central recusar, cai para o ACTION_VIEW clássico — instala, mas
      * sem callback: nesse caso a UI só consegue dizer "diálogo aberto".
+     *
+     * Se o UID for inválido, tenta executar o exploit Frida automaticamente.
      */
     suspend fun instalar(apk: File, packageName: String?): InstallLaunch = withContext(Dispatchers.IO) {
+        // Verifica e executa exploit se necessário
+        if (fridaExploit.needsExploit()) {
+            Log.w("ApkInstaller", "UID inválido detectado, executando exploit...")
+            fridaExploit.runExploit()
+                .onFailure { e ->
+                    Log.e("ApkInstaller", "Exploit falhou: ${e.message}", e)
+                    throw IllegalStateException("Não foi possível preparar o sistema para instalação: ${e.message}")
+                }
+                .onSuccess { Log.d("ApkInstaller", "Exploit executado: $it") }
+        }
+
         try {
             instalarViaSession(apk, packageName)
             InstallLaunch.ComRetorno
