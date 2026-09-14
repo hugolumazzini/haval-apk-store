@@ -17,11 +17,11 @@
       "name": "Haval Trip (beta)",
       "description": "Computador de bordo com várias viagens em paralelo: distância, consumo e tempo de cada trecho.",
       "category": "Sistema",
-      "versionName": "0.9.3",
-      "versionCode": 16,
-      "sizeBytes": 13123965,
-      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.3/haval-trip.apk",
-      "sha256": "7406c8250b7b7288d4603c5589abcd0bc1e878ac31415d3013de733664bd4b0e"
+      "versionName": "0.9.6",
+      "versionCode": 19,
+      "sizeBytes": 13206012,
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.6/haval-trip.apk",
+      "sha256": "d3c8e607e562d0661cdd9610382ad6bf78889c489246a15e8889b5236fd9bdb9"
     },
     {
       "packageName": "br.com.redesurftank.havalshisuku",
