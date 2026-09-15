@@ -17,11 +17,11 @@
       "name": "Haval Trip (beta)",
       "description": "Computador de bordo com várias viagens em paralelo: distância, consumo e tempo de cada trecho.",
       "category": "Sistema",
-      "versionName": "0.9.6",
-      "versionCode": 19,
-      "sizeBytes": 13206012,
-      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.6/haval-trip.apk",
-      "sha256": "d3c8e607e562d0661cdd9610382ad6bf78889c489246a15e8889b5236fd9bdb9"
+      "versionName": "0.9.7",
+      "versionCode": 20,
+      "sizeBytes": 13222436,
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.7/haval-trip.apk",
+      "sha256": "a92d0eda80026db9636771b89326023ac64ac8bd623be9cdfe7de6bb040db82f"
     },
     {
       "packageName": "br.com.redesurftank.havalshisuku",
@@ -50,11 +50,11 @@
       "name": "AutoPanel",
       "description": "Barra de atalhos fixa na parte de baixo da tela, sobreposta à interface da central.",
       "category": "Interface",
-      "versionName": "v1.10.0",
-      "versionCode": 1897,
-      "sizeBytes": 30581415,
-      "apkUrl": "https://github.com/leonardovin/shizuku-bottom-bar-releases/releases/download/v1.10.0/haval-bottom-bar-v1.10.0.apk",
-      "sha256": "b4945742342b8ef1152ef670db3dad1d2d89b25b4f558c2cc904ca428f874401"
+      "versionName": "v1.14.0",
+      "versionCode": 1950,
+      "sizeBytes": 33554432,
+      "apkUrl": "https://github.com/leonardovin/shizuku-bottom-bar-releases/releases/download/v1.14.0/haval-bottom-bar-v1.14.0.apk",
+      "sha256": "4e14042f5e60efb21269f5ceb3124243808fb1b3beb05132cf6005de8840861d"
     },
     {
       "packageName": "br.com.redesurftank.havalradio",
