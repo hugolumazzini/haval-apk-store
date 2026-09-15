@@ -47,14 +47,25 @@
     },
     {
       "packageName": "dev.leonardovin.havalbottombar",
-      "name": "AutoPanel",
-      "description": "Barra de atalhos fixa na parte de baixo da tela, sobreposta à interface da central.",
+      "name": "AutoPanel (beta 1.15.0)",
+      "description": "Barra de atalhos fixa na parte de baixo da tela, sobreposta à interface da central. Versão mais recente.",
       "category": "Interface",
       "versionName": "v1.15.0",
       "versionCode": 1964,
       "sizeBytes": 33203961,
       "apkUrl": "https://github.com/leonardovin/shizuku-bottom-bar-releases/releases/download/v1.15.0/haval-bottom-bar-v1.15.0.apk",
       "sha256": "5f8033c299e6abdb450219d7fa4afb298a2cbbb8c704060267551e40fdb5ad28"
+    },
+    {
+      "packageName": "dev.leonardovin.havalbottombar",
+      "name": "AutoPanel (estável 1.11.1)",
+      "description": "Barra de atalhos fixa na parte de baixo da tela, sobreposta à interface da central. Versão estável.",
+      "category": "Interface",
+      "versionName": "v1.11.1",
+      "versionCode": 1953,
+      "sizeBytes": 33017973,
+      "apkUrl": "https://github.com/leonardovin/shizuku-bottom-bar-releases/releases/download/v1.11.1/haval-bottom-bar-v1.11.1.apk",
+      "sha256": "f5ab6c85e305dbdc404cef90b1090ffaa3e42daae1ade45964107afc3225d994"
     },
     {
       "packageName": "br.com.redesurftank.havalradio",
