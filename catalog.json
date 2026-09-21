@@ -1,39 +1,104 @@
 {
+  "version": 1,
   "apps": [
+    {
+      "packageName": "br.com.hugolumazzini.havalapkstore",
+      "name": "Haval APK Store",
+      "description": "Este aplicativo. A entrada existe para ele se atualizar sozinho.",
+      "category": "Sistema",
+      "versionName": "1.0.0",
+      "versionCode": 1,
+      "sizeBytes": 9467928,
+      "apkUrl": "https://github.com/hugolumazzini/haval-apk-store/releases/download/v1.0.0/haval-apk-store.apk",
+      "sha256": "f91380ab68f8b6783dabe44d3e04739eff01c847a3d9229aba32d8a211d6ba71"
+    },
+    {
+      "packageName": "br.com.redesurftank.havalshisuku",
+      "name": "Impulse (beta 84)",
+      "description": "Ajustes avançados da central e do veículo. Versão de testes — mais nova, porém menos rodada que a estável.",
+      "category": "Sistema",
+      "versionName": "1.0.0.84-preview",
+      "versionCode": 85,
+      "sizeBytes": 60817920,
+      "apkUrl": "https://github.com/bobaoapae/haval-app-tool-multimidia/releases/download/v1.0.0.84-preview/app-release.apk",
+      "sha256": "072a4a4c3cfa32388234456f1733f74c53908dbb74f22030e6267e787d695897"
+    },
+    {
+      "packageName": "br.com.redesurftank.havalshisuku",
+      "name": "Impulse (estável 79)",
+      "description": "A mesma ferramenta, na última versão estável. Escolha esta se preferir estabilidade a novidade.",
+      "category": "Sistema",
+      "versionName": "1.0.0.79",
+      "versionCode": 80,
+      "sizeBytes": 50400491,
+      "apkUrl": "https://github.com/bobaoapae/haval-app-tool-multimidia/releases/download/v1.0.0.79/app-release.apk",
+      "sha256": "68aac902df7a1b6a52bc1d1e0ba899e89b58515faa606e85e5af10411320b1ca"
+    },
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
       "name": "Haval Trip",
       "description": "Computador de bordo multi-trip para Haval H6",
-      "versions": [
-        {
-          "versionName": "0.9.17",
-          "versionCode": 30,
-          "downloadUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.17/app-release-unsigned.apk",
-          "sha256": "48bde27cab2e5548448f1bc5fba487683c8e0e3fb27fdeaae957dfab1b2ac833",
-          "size": 9739559
-        },
-        {
-          "versionName": "0.9.30",
-          "versionCode": 42,
-          "downloadUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.30/app-release.apk",
-          "sha256": "03508e11997c21269a9e67b077cae9670ce28502e433e08790eea01adb3ca562",
-          "size": 9757900
-        },
-        {
-          "versionName": "0.9.25",
-          "versionCode": 38,
-          "downloadUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.25/app-release.apk",
-          "sha256": "9240bd18fd35d928f48eea5556cfd732bf3aef560764e84a07280a724247d5a6",
-          "size": 9735999
-        },
-        {
-          "versionName": "0.9.24",
-          "versionCode": 37,
-          "downloadUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.24/app-release.apk",
-          "sha256": "7e8f5c0e1f2d4a9b6c3e5d8f1a2b4c6d8e0f1a2b4c6d8e0f1a2b4c6d8e0f1a",
-          "size": 9735999
-        }
-      ]
+      "category": "Sistema",
+      "versionName": "0.9.30",
+      "versionCode": 42,
+      "sizeBytes": 13631488,
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.30/app-release.apk",
+      "sha256": "f00e2ced2e701e9fee704f5c19377e76a8defdc2723301479534119a76e2dd4e"
+    },
+    {
+      "packageName": "dev.leonardovin.havalbottombar",
+      "name": "AutoPanel",
+      "description": "Barra de atalhos fixa na parte de baixo da tela, sobreposta à interface da central.",
+      "category": "Interface",
+      "versionName": "v1.15.5",
+      "versionCode": 2050,
+      "sizeBytes": 34603008,
+      "apkUrl": "https://github.com/leonardovin/shizuku-bottom-bar-releases/releases/download/v1.15.5/haval-bottom-bar-v1.15.5.apk",
+      "sha256": "9a4d17915aa405b0e17c3b4e29dcdd249f9da4e23b0d12e41b1a07289f6f9c3b"
+    },
+    {
+      "packageName": "br.com.redesurftank.havalradio",
+      "name": "Haval Radio",
+      "description": "Aplicativo de rádio para a central.",
+      "category": "Mídia",
+      "versionName": "1.4.6",
+      "versionCode": 28,
+      "sizeBytes": 2432966,
+      "apkUrl": "https://github.com/leandrosavn/haval-radio/releases/download/v1.4.6/app-release.apk",
+      "sha256": "8972687522bdd33b9c3240a74c97fcc71b7abc84f4a57a045a58436133ea4d5e"
+    },
+    {
+      "packageName": "br.com.redesurftank.havalclimatecontrol",
+      "name": "Haval Climate Control",
+      "description": "Controle da climatização pela tela da central.",
+      "category": "Conforto",
+      "versionName": "1.19.1",
+      "versionCode": 43,
+      "sizeBytes": 49641050,
+      "apkUrl": "https://github.com/rocamoras/haval-climate-control/releases/download/v1.19.1/app-release.apk",
+      "sha256": "8089982982937f50d3c0de35a2c78e2b912333b84d4a98c3bbca8a8e002768d4"
+    },
+    {
+      "packageName": "com.waze",
+      "name": "Waze",
+      "description": "Navegação com trânsito em tempo real.",
+      "category": "Navegação",
+      "versionName": "4.81.0.4",
+      "versionCode": 1022759,
+      "sizeBytes": 89426195,
+      "apkUrl": "https://shorturl.at/R6grE",
+      "sha256": "9b260bd7b100f1ef95ed238bd75ba282cd0d0077f483b596c4c370d547dded75"
+    },
+    {
+      "packageName": "com.revanced.net.revancedmanager",
+      "name": "ReVanced Manager Plus",
+      "description": "Aplica modificações em outros apps, como remover anúncios do YouTube.",
+      "category": "Ferramentas",
+      "versionName": "3.0.36",
+      "versionCode": 133,
+      "sizeBytes": 2269391,
+      "apkUrl": "https://shorturl.at/h7Zx4",
+      "sha256": "dcee336bb3df8f80e62e994042dd9cad2c085c271ace432837f1dc33d7552d72"
     }
   ]
 }
