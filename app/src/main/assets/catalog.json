@@ -35,6 +35,17 @@
       "sha256": "68aac902df7a1b6a52bc1d1e0ba899e89b58515faa606e85e5af10411320b1ca"
     },
     {
+      "packageName": "br.com.hugolumazzini.havaltrip",
+      "name": "Haval Trip",
+      "description": "Computador de bordo multi-trip para Haval H6",
+      "category": "Sistema",
+      "versionName": "0.9.30",
+      "versionCode": 42,
+      "sizeBytes": 9757900,
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.30/app-release.apk",
+      "sha256": "03508e11997c21269a9e67b077cae9670ce28502e433e08790eea01adb3ca562"
+    },
+    {
       "packageName": "dev.leonardovin.havalbottombar",
       "name": "AutoPanel",
       "description": "Barra de atalhos fixa na parte de baixo da tela, sobreposta à interface da central.",
