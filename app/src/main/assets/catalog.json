@@ -14,14 +14,14 @@
     },
     {
       "packageName": "br.com.redesurftank.havalshisuku",
-      "name": "Impulse (beta 81)",
+      "name": "Impulse (beta 84)",
       "description": "Ajustes avançados da central e do veículo. Versão de testes — mais nova, porém menos rodada que a estável.",
       "category": "Sistema",
-      "versionName": "1.0.0.81-preview",
-      "versionCode": 82,
-      "sizeBytes": 60570455,
-      "apkUrl": "https://github.com/bobaoapae/haval-app-tool-multimidia/releases/download/v1.0.0.81-preview/app-release.apk",
-      "sha256": "f14914050d304a623b823707316745cf628f795f0e2949c27e191009c6834ac7"
+      "versionName": "1.0.0.84-preview",
+      "versionCode": 85,
+      "sizeBytes": 60817920,
+      "apkUrl": "https://github.com/bobaoapae/haval-app-tool-multimidia/releases/download/v1.0.0.84-preview/app-release.apk",
+      "sha256": "072a4a4c3cfa32388234456f1733f74c53908dbb74f22030e6267e787d695897"
     },
     {
       "packageName": "br.com.redesurftank.havalshisuku",
