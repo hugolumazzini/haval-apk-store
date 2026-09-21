@@ -41,9 +41,9 @@
       "category": "Sistema",
       "versionName": "0.9.30",
       "versionCode": 42,
-      "sizeBytes": 9757900,
+      "sizeBytes": 13631488,
       "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.30/app-release.apk",
-      "sha256": "03508e11997c21269a9e67b077cae9670ce28502e433e08790eea01adb3ca562"
+      "sha256": "f00e2ced2e701e9fee704f5c19377e76a8defdc2723301479534119a76e2dd4e"
     },
     {
       "packageName": "dev.leonardovin.havalbottombar",
