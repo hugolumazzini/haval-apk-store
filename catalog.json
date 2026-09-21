@@ -6,6 +6,13 @@
       "description": "Computador de bordo multi-trip para Haval H6",
       "versions": [
         {
+          "versionName": "0.9.17",
+          "versionCode": 30,
+          "downloadUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.17/app-release-unsigned.apk",
+          "sha256": "48bde27cab2e5548448f1bc5fba487683c8e0e3fb27fdeaae957dfab1b2ac833",
+          "size": 9739559
+        },
+        {
           "versionName": "0.9.30",
           "versionCode": 42,
           "downloadUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.30/app-release.apk",
