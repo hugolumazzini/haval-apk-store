@@ -37,13 +37,13 @@
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
       "name": "Haval Trip",
-      "description": "Computador de bordo multi-trip para Haval H6. Otimizado: APK 24% menor e mais seguro!",
+      "description": "Computador de bordo multi-trip para Haval H6. v1.0 Production Ready!",
       "category": "Sistema",
-      "versionName": "0.9.28",
-      "versionCode": 41,
-      "sizeBytes": 7467549,
-      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v0.9.28/app-release.apk",
-      "sha256": "ff7a6b8ad13bbcbfc632322c49e874df09ccf2d8ec0fc64c849561c9c7dcfaf5"
+      "versionName": "1.0.0",
+      "versionCode": 42,
+      "sizeBytes": 7467597,
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.0/app-release.apk",
+      "sha256": "9559a13a551873c78152561a178cc4b9bdadb14750631a164be48b1a4df89427"
     },
     {
       "packageName": "dev.leonardovin.havalbottombar",
