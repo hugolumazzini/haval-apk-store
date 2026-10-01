@@ -37,13 +37,13 @@
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
       "name": "Haval Trip",
-      "description": "Computador de bordo multi-trip para Haval H6. v1.0.2: Despedida limpa tudo!",
+      "description": "Computador de bordo multi-trip para Haval H6. v1.0.2: Aviso de combustível baixo + gráficos de viagens por dia/semana/mês",
       "category": "Sistema",
       "versionName": "1.0.2",
       "versionCode": 44,
-      "sizeBytes": 7483985,
+      "sizeBytes": 8142527,
       "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.2/app-release.apk",
-      "sha256": "5f145e47aa21a50f8957f480df5e8b932991c9f662dc8da0104f167d4794d821"
+      "sha256": "aee53db51ce2e63258d7d198f9ae4c5682781b9b617aa78b1f78e7788551e2f9"
     },
     {
       "packageName": "dev.leonardovin.havalbottombar",
