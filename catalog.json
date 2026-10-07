@@ -26,13 +26,13 @@
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
       "name": "Haval Trip",
-      "description": "Computador de bordo multi-trip para Haval H6. v1.0.4: WindowManager overlays - sempre visível no cluster",
+      "description": "Computador de bordo multi-trip para Haval H6. v1.0.5: Consumo elétrico corrigido, % elétrico funcional",
       "category": "Sistema",
-      "versionName": "1.0.4",
-      "versionCode": 46,
-      "sizeBytes": 8142563,
-      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.4/app-release.apk",
-      "sha256": "d2ab14aa783b862749a250d4946fc3df63f93002731c69e52d2dd8094bea64df"
+      "versionName": "1.0.5",
+      "versionCode": 47,
+      "sizeBytes": 8142615,
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.5/app-release.apk",
+      "sha256": "2e9a776d24d6f1fbef3791b65ee126fbc7a44c9972c03c33e4a40b04b8625ffa"
     },
     {
       "packageName": "dev.leonardovin.havalbottombar",
