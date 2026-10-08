@@ -26,13 +26,13 @@
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
       "name": "Haval Trip",
-      "description": "Computador de bordo multi-trip para Haval H6. v1.0.8: Consumo elétrico corrigido + indicadores % combustível/bateria",
+      "description": "Computador de bordo multi-trip para Haval H6. v1.0.9: Fontes maiores + energia consumida em kWh + calibração de pneus",
       "category": "Sistema",
-      "versionName": "1.0.8",
-      "versionCode": 50,
+      "versionName": "1.0.9",
+      "versionCode": 51,
       "sizeBytes": 8158999,
-      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.8/app-release.apk",
-      "sha256": "ace8a0aebdba27b796d5b8d9c2cba7ab7f60fbba9aa77b59877ebeab49d51862"
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.9/app-release.apk",
+      "sha256": "07a3ea41e81c03966ce3b22239029526cb290ccf2ef47da49e392abf49e2a29c"
     },
     {
       "packageName": "dev.leonardovin.havalbottombar",
