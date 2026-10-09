@@ -26,13 +26,13 @@
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
       "name": "Haval Trip",
-      "description": "Computador de bordo multi-trip para Haval H6. v1.0.12: Botão manual para pedir autorização do Shizuku (Configuração → GERAL)",
+      "description": "Computador de bordo multi-trip para Haval H6. v1.0.13: DEBUG - kWh corrigido + logs para investigar projeção/despedida",
       "category": "Sistema",
-      "versionName": "1.0.12",
-      "versionCode": 54,
+      "versionName": "1.0.13",
+      "versionCode": 55,
       "sizeBytes": 8159007,
-      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.12/app-release.apk",
-      "sha256": "2432b9f54efb428e6f372b1998c37beecb569cb53c5e95b33b1570e5f58670a9"
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.13/app-release.apk",
+      "sha256": "2c35ee187c53041088a85e40662dd13413c8c0f6592a32a29ecd97d25018f972"
     },
     {
       "packageName": "dev.leonardovin.havalbottombar",
