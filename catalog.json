@@ -26,13 +26,13 @@
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
       "name": "Haval Trip",
-      "description": "Computador de bordo multi-trip para Haval H6. v1.0.15: Gerar link de logs (Ver Logs → Gerar link)",
+      "description": "Computador de bordo multi-trip para Haval H6. v1.0.16: FIX logs vazios - agora captura corretamente!",
       "category": "Sistema",
-      "versionName": "1.0.15",
-      "versionCode": 57,
-      "sizeBytes": 8159007,
-      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.15/app-release.apk",
-      "sha256": "92b1b5ec033e18515cdcdf318b12f73fd9745560f28989a07c6da754d7912545"
+      "versionName": "1.0.16",
+      "versionCode": 58,
+      "sizeBytes": 8159003,
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.16/app-release.apk",
+      "sha256": "fa5dde5600e3760d4f280eb1d9d8273ab5e1fbd989bc0b726c090c2947b54574"
     },
     {
       "packageName": "dev.leonardovin.havalbottombar",
