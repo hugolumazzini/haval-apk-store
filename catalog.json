@@ -26,13 +26,13 @@
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
       "name": "Haval Trip",
-      "description": "Computador de bordo multi-trip para Haval H6. v1.0.19: CAPTURA RESTAURADA - funciona como ad223a0!",
+      "description": "Computador de bordo multi-trip para Haval H6. v1.0.20: Despedida via Activity - SEM permissão extra!",
       "category": "Sistema",
-      "versionName": "1.0.19",
-      "versionCode": 61,
+      "versionName": "1.0.20",
+      "versionCode": 62,
       "sizeBytes": 8159007,
-      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.19/app-release.apk",
-      "sha256": "4d5441b9d5d7e9cb609815bd6fbf85c595c416133f90d4f53a5d2f8f933a4fdd"
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.20/app-release.apk",
+      "sha256": "369e9a2b09302f33969b3091b911cb7f1d112489fcfa0f7e7de22cb2dc8d46b8"
     },
     {
       "packageName": "dev.leonardovin.havalbottombar",
