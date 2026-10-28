@@ -26,13 +26,13 @@
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
       "name": "Haval Trip",
-      "description": "Computador de bordo multi-trip para Haval H6. v1.0.22: Ajuste padrão de posições do cluster integrado ao painel.",
+      "description": "Computador de bordo multi-trip para Haval H6. v1.0.23: Despedida em TELA CHEIA - agora cobre o painel inteiro!",
       "category": "Sistema",
-      "versionName": "1.0.22",
-      "versionCode": 64,
-      "sizeBytes": 8159007,
-      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.22/app-release.apk",
-      "sha256": "274566f786e5291c3f6b9b1e0af4edc3659d00943875559cd88b7e329c0e4408"
+      "versionName": "1.0.23",
+      "versionCode": 65,
+      "sizeBytes": 8159003,
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.23/app-release.apk",
+      "sha256": "0324f79bcfd7ee5702cbdffde32ceac3ec5e5512de5ef27d0b1346ef1b95e706"
     },
     {
       "packageName": "dev.leonardovin.havalbottombar",
