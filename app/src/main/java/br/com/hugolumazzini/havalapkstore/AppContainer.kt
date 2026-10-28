@@ -3,6 +3,7 @@ package br.com.hugolumazzini.havalapkstore
 import android.content.Context
 import br.com.hugolumazzini.havalapkstore.data.CatalogRepository
 import br.com.hugolumazzini.havalapkstore.data.Downloader
+import br.com.hugolumazzini.havalapkstore.data.HavalTripRepository
 import br.com.hugolumazzini.havalapkstore.install.ApkInstaller
 import br.com.hugolumazzini.havalapkstore.system.InstalledAppsRepository
 import okhttp3.OkHttpClient
@@ -23,6 +24,7 @@ class AppContainer(context: Context) {
         .build()
 
     val catalogRepository = CatalogRepository(app, http)
+    val havalTripRepository = HavalTripRepository(http)
     val downloader = Downloader(app, http)
     val installer = ApkInstaller(app)
     val installedApps = InstalledAppsRepository(app)

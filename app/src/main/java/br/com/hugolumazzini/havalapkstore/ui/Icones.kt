@@ -42,3 +42,37 @@ val IconeDownload: ImageVector by lazy {
         }
     }.build()
 }
+
+/**
+ * Ícone de histórico/versões — um relógio com seta circular.
+ * Usado na aba de versões do Haval Trip.
+ */
+val IconeHistorico: ImageVector by lazy {
+    ImageVector.Builder(
+        name = "History",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
+        viewportHeight = 24f,
+    ).apply {
+        path(fill = SolidColor(Color.White)) {
+            // Círculo do relógio
+            moveTo(13f, 3f)
+            arcTo(9f, 9f, 0f, false, false, 13f, 21f)
+            arcTo(9f, 9f, 0f, false, false, 13f, 3f)
+            close()
+            moveTo(13f, 5f)
+            arcTo(7f, 7f, 0f, true, true, 6f, 12f)
+            arcTo(7f, 7f, 0f, false, true, 13f, 5f)
+            close()
+            // Ponteiros
+            moveTo(12.5f, 8f)
+            verticalLineTo(13f)
+            lineTo(16.2f, 15.2f)
+            lineTo(15.2f, 16.7f)
+            lineTo(11f, 14f)
+            verticalLineTo(8f)
+            close()
+        }
+    }.build()
+}

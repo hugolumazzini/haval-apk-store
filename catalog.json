@@ -4,13 +4,13 @@
     {
       "packageName": "br.com.hugolumazzini.havalapkstore",
       "name": "Haval APK Store",
-      "description": "Este aplicativo. A entrada existe para ele se atualizar sozinho.",
+      "description": "Este aplicativo. v1.4.0: Nova aba para navegar entre todas as versões do Haval Trip!",
       "category": "Sistema",
-      "versionName": "1.1.0",
-      "versionCode": 2,
-      "sizeBytes": 9469634,
-      "apkUrl": "https://github.com/hugolumazzini/haval-apk-store/releases/download/v1.1.0/haval-apk-store.apk",
-      "sha256": "eae8220b2c8ef9c1d9cee4d05e1db845bd66787ef6a8cadc0c888f68e108a2cc"
+      "versionName": "1.4.0",
+      "versionCode": 4,
+      "sizeBytes": 9486187,
+      "apkUrl": "https://github.com/hugolumazzini/haval-apk-store/releases/download/v1.4.0/haval-apk-store.apk",
+      "sha256": "a4e898aef4ca76bd23e57721902b1fdd0c92e09eb2d20ebfe4a76819e0203e20"
     },
     {
       "packageName": "br.com.redesurftank.havalshisuku",

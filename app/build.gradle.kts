@@ -40,8 +40,8 @@ android {
         applicationId = "br.com.hugolumazzini.havalapkstore"
         minSdk = 23
         targetSdk = 34
-        versionCode = 2
-        versionName = "1.1.0"
+        versionCode = 4
+        versionName = "1.4.0"
     }
 
     signingConfigs {

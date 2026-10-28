@@ -48,6 +48,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import br.com.hugolumazzini.havalapkstore.AppViewModel
 import br.com.hugolumazzini.havalapkstore.ui.screens.CatalogScreen
+import br.com.hugolumazzini.havalapkstore.ui.screens.HavalTripVersionsScreen
 import br.com.hugolumazzini.havalapkstore.ui.screens.InstalledScreen
 import br.com.hugolumazzini.havalapkstore.ui.screens.SettingsScreen
 import br.com.hugolumazzini.havalapkstore.ui.screens.UrlInstallScreen
@@ -58,6 +59,7 @@ import br.com.hugolumazzini.havalapkstore.ui.theme.EstiloSecao
 private enum class Aba(val titulo: String, val icone: ImageVector) {
     CATALOGO("Catálogo", Icons.Filled.ShoppingCart),
     URL("Por URL", IconeDownload),
+    HAVAL_TRIP("Haval Trip", IconeHistorico),
     INSTALADOS("Instalados", Icons.Filled.List),
     AJUSTES("Ajustes", Icons.Filled.Settings),
 }
@@ -109,6 +111,7 @@ fun AppNav(vm: AppViewModel) {
                 when (aba) {
                     Aba.CATALOGO -> CatalogScreen(vm, state)
                     Aba.URL -> UrlInstallScreen(vm, state)
+                    Aba.HAVAL_TRIP -> HavalTripVersionsScreen(vm, state)
                     Aba.INSTALADOS -> InstalledScreen(
                         vm = vm,
                         state = state,

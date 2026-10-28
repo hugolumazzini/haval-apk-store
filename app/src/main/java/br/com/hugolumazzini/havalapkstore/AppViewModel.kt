@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.hugolumazzini.havalapkstore.data.model.CatalogApp
 import br.com.hugolumazzini.havalapkstore.data.model.CatalogOrigin
+import br.com.hugolumazzini.havalapkstore.data.model.HavalTripRelease
 import br.com.hugolumazzini.havalapkstore.install.InstallEvent
 import br.com.hugolumazzini.havalapkstore.install.InstallEvents
 import br.com.hugolumazzini.havalapkstore.install.InstallLaunch
@@ -45,6 +46,9 @@ data class UiState(
     val atualizacaoDaLoja: CatalogApp? = null,
     /** Vira true depois do primeiro catálogo carregado, para não dizer "atualizado" cedo demais. */
     val versaoConferida: Boolean = false,
+    /** Releases do Haval Trip disponíveis no GitHub. */
+    val havalTripReleases: List<HavalTripRelease> = emptyList(),
+    val carregandoHavalTrip: Boolean = false,
 )
 
 enum class EstadoApp { NAO_INSTALADO, ATUALIZAVEL, INSTALADO }
@@ -294,5 +298,30 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
 
     fun limparMensagem() {
         _state.update { it.copy(mensagem = null, erro = false) }
+    }
+
+    // ---------- haval trip versions ----------
+
+    fun recarregarHavalTripReleases() {
+        viewModelScope.launch {
+            _state.update { it.copy(carregandoHavalTrip = true) }
+            val releases = container.havalTripRepository.loadReleases()
+            _state.update {
+                it.copy(
+                    havalTripReleases = releases,
+                    carregandoHavalTrip = false,
+                )
+            }
+        }
+    }
+
+    fun instalarHavalTrip(release: HavalTripRelease) {
+        iniciar(
+            titulo = "Haval Trip ${release.tagName}",
+            url = release.apkUrl,
+            nomeArquivo = "haval-trip-${release.tagName}.apk",
+            packageName = null,
+            sha256 = null,
+        )
     }
 }
