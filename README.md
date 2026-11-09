@@ -114,21 +114,23 @@ shasum -a 256 app.apk                  # sha256
 stat -f%z app.apk                      # sizeBytes
 ```
 
-O `apkUrl` precisa terminar entregando o arquivo. Redirecionamentos funcionam —
-links `shorturl.at` foram testados e passam. O que **não** funciona é página de
-download que exige um clique de confirmação (Google Drive, APKMirror): o app
-receberia HTML no lugar do APK.
+O `apkUrl` precisa terminar entregando o arquivo, então use sempre o endereço
+direto dele — de preferência um release do GitHub. Redirecionamentos simples
+funcionam, mas **não** encurtadores com verificação anti-robô: o `shorturl.at`,
+por exemplo, responde com o desafio do Cloudflare ("Just a moment...") e o app
+receberia HTML no lugar do APK. Também não funciona página de download que exige
+um clique de confirmação (Google Drive, APKMirror).
 
-### Sobre o `sha256` das entradas com link encurtado
+### Waze e ReVanced Manager Plus
 
-Waze e ReVanced Manager Plus usam encurtadores, que apontam para "a versão
-atual" e não para um arquivo fixo. Quando essa versão mudar, o hash gravado aqui
-deixa de bater e o app vai **recusar a instalação** — que é o comportamento
-desejado: melhor falhar do que instalar um arquivo que não é o esperado.
+Os dois apontam para releases de terceiros no GitHub, fixas por tag:
+`rhumba99/impulse` (Waze) e `vancedto/vanced.to` (ReVanced Manager Plus). O
+arquivo de uma tag não muda, e o `sha256` garante que, se mudar, o app recusa a
+instalação — melhor falhar do que instalar um arquivo que não é o esperado.
 
-Quando isso acontecer, baixe o novo arquivo e atualize o `sha256`, o
-`versionCode` e o `versionName` desta entrada. As entradas do GitHub não têm
-esse problema: apontam para uma versão fixa, que nunca muda.
+O risco é o dono do repositório apagar a release: aí o link deixa de existir.
+Versão nova não aparece sozinha — olhe as releases desses repositórios, baixe o
+APK e atualize `apkUrl`, `sha256`, `sizeBytes`, `versionCode` e `versionName`.
 
 ## Publicar uma versão nova
 

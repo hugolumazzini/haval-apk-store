@@ -14,14 +14,14 @@
     },
     {
       "packageName": "br.com.redesurftank.havalshisuku",
-      "name": "Impulse (estável 89)",
-      "description": "Ajustes avançados da central e do veículo. Última versão estável.",
+      "name": "Impulse (preview 92)",
+      "description": "Ajustes avançados da central e do veículo. Versão de teste (preview): pode ter falhas.",
       "category": "Sistema",
-      "versionName": "1.0.0.89",
-      "versionCode": 90,
-      "sizeBytes": 60839681,
-      "apkUrl": "https://github.com/bobaoapae/haval-app-tool-multimidia/releases/download/v1.0.0.89/app-release.apk",
-      "sha256": "6ace64537a0aba904122c81b5cb0e7f62d9d538da4839c8c30f71cc7d17d088c"
+      "versionName": "1.0.0.92-preview",
+      "versionCode": 93,
+      "sizeBytes": 70251174,
+      "apkUrl": "https://github.com/bobaoapae/haval-app-tool-multimidia/releases/download/v1.0.0.92-preview/app-release.apk",
+      "sha256": "8d437672b9bab2568c8bf152ff1402d69a459e00f0ccd1d81438c5f56c661074"
     },
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
@@ -39,11 +39,11 @@
       "name": "AutoPanel",
       "description": "Barra de atalhos fixa na parte de baixo da tela, sobreposta à interface da central.",
       "category": "Interface",
-      "versionName": "v1.18.9",
-      "versionCode": 2632,
-      "sizeBytes": 34777053,
-      "apkUrl": "https://github.com/leonardovin/shizuku-bottom-bar-releases/releases/download/v1.18.9/haval-bottom-bar-v1.18.9.apk",
-      "sha256": "d174247b3086b2b42dae363f98d459ffbb2f60a2c59c5879d2a991b8fa7b1b3f"
+      "versionName": "v1.20.1",
+      "versionCode": 2865,
+      "sizeBytes": 34943045,
+      "apkUrl": "https://github.com/leonardovin/shizuku-bottom-bar-releases/releases/download/v1.20.1/haval-bottom-bar-v1.20.1.apk",
+      "sha256": "076ba1d055ece4734e8ed948c520cb1b855e1f96afe4566d5391759b373a2775"
     },
     {
       "packageName": "br.com.redesurftank.havalradio",
@@ -61,11 +61,11 @@
       "name": "Haval Climate Control",
       "description": "Controle da climatização pela tela da central.",
       "category": "Conforto",
-      "versionName": "1.20.0",
-      "versionCode": 44,
-      "sizeBytes": 49641050,
-      "apkUrl": "https://github.com/rocamoras/haval-climate-control/releases/download/v1.20.0/app-release.apk",
-      "sha256": "ab9ecf28740cd68d42c1e5d39af696528104067232ef9cd89d835cfdcf0eccb4"
+      "versionName": "1.33.1",
+      "versionCode": 82,
+      "sizeBytes": 27696540,
+      "apkUrl": "https://github.com/rocamoras/haval-climate-control/releases/download/v1.33.1/app-release.apk",
+      "sha256": "59d46e0b1420cfd3f0b8c1504b2ea554bd8dffb936616ba225ab4fdfa743191f"
     },
     {
       "packageName": "com.waze",
@@ -75,7 +75,7 @@
       "versionName": "4.81.0.4",
       "versionCode": 1022759,
       "sizeBytes": 89426195,
-      "apkUrl": "https://shorturl.at/R6grE",
+      "apkUrl": "https://github.com/rhumba99/impulse/releases/download/waze.4.81/Waze.GPS.Maps.Traffic.Alerts.Live.Navigation_v4.81.0.4_apkpure.com.apk",
       "sha256": "9b260bd7b100f1ef95ed238bd75ba282cd0d0077f483b596c4c370d547dded75"
     },
     {
@@ -83,11 +83,11 @@
       "name": "ReVanced Manager Plus",
       "description": "Aplica modificações em outros apps, como remover anúncios do YouTube.",
       "category": "Ferramentas",
-      "versionName": "3.0.36",
-      "versionCode": 133,
-      "sizeBytes": 2269391,
-      "apkUrl": "https://shorturl.at/h7Zx4",
-      "sha256": "dcee336bb3df8f80e62e994042dd9cad2c085c271ace432837f1dc33d7552d72"
+      "versionName": "3.6.25",
+      "versionCode": 385,
+      "sizeBytes": 2477424,
+      "apkUrl": "https://github.com/vancedto/vanced.to/releases/download/2026-44/vanced.to_revanced_manager_plus_v3.6.25.apk",
+      "sha256": "f13df8fb954e096ec4f2d79718f8161f7b771b9094bc105600a7493837045a60"
     }
   ]
 }
