@@ -26,13 +26,13 @@
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
       "name": "Haval Trip",
-      "description": "Computador de bordo multi-trip para Haval H6. v1.0.31: despedida em tela cheia quando só a bola está projetada.",
+      "description": "Computador de bordo multi-trip para Haval H6. v1.0.32: a despedida fica por cima de tudo no painel, inclusive do mapa.",
       "category": "Sistema",
-      "versionName": "1.0.31",
-      "versionCode": 73,
+      "versionName": "1.0.32",
+      "versionCode": 74,
       "sizeBytes": 8159067,
-      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.31/app-release.apk",
-      "sha256": "b01902126c49fa5ddd014336e831fdd24ab1d956214ab39cfe92edd95fcde8fd"
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.32/app-release.apk",
+      "sha256": "73a944cb14aaf10ea6e13dd7eb5c2262b3ef170650587f9333f462d79f55642b"
     },
     {
       "packageName": "dev.leonardovin.havalbottombar",
