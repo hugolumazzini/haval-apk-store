@@ -14,14 +14,14 @@
     },
     {
       "packageName": "br.com.redesurftank.havalshisuku",
-      "name": "Impulse (preview 92)",
+      "name": "Impulse (preview 93)",
       "description": "Ajustes avançados da central e do veículo. Versão de teste (preview): pode ter falhas.",
       "category": "Sistema",
-      "versionName": "1.0.0.92-preview",
-      "versionCode": 93,
+      "versionName": "1.0.0.93-preview",
+      "versionCode": 94,
       "sizeBytes": 70251174,
-      "apkUrl": "https://github.com/bobaoapae/haval-app-tool-multimidia/releases/download/v1.0.0.92-preview/app-release.apk",
-      "sha256": "8d437672b9bab2568c8bf152ff1402d69a459e00f0ccd1d81438c5f56c661074"
+      "apkUrl": "https://github.com/bobaoapae/haval-app-tool-multimidia/releases/download/v1.0.0.93-preview/app-release.apk",
+      "sha256": "e285392524c40d5bcbcc14855de99d63abb33ca2d7b40dc4c4a4bb5578352f66"
     },
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
