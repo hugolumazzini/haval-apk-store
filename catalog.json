@@ -26,13 +26,13 @@
     {
       "packageName": "br.com.hugolumazzini.havaltrip",
       "name": "Haval Trip",
-      "description": "Computador de bordo multi-trip para Haval H6. v1.0.37: fechar a viagem pelo volante (segure o OK numa Trip do painel).",
+      "description": "Computador de bordo multi-trip para Haval H6. v1.0.38: fechar a viagem pelo volante (segure e solte o OK numa Trip do painel).",
       "category": "Sistema",
-      "versionName": "1.0.37",
-      "versionCode": 79,
+      "versionName": "1.0.38",
+      "versionCode": 80,
       "sizeBytes": 8175451,
-      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.37/app-release.apk",
-      "sha256": "fcb63afc4a4a4c07ba080455003a5d176c82f8ebb3079ad296b51d3fe603239f"
+      "apkUrl": "https://github.com/hugolumazzini/haval-trip/releases/download/v1.0.38/app-release.apk",
+      "sha256": "502182494f1fb2097c5f0e79ef4d46f62c6e80d5c9cc7b4100dd8a7531071fa1"
     },
     {
       "packageName": "dev.leonardovin.havalbottombar",
